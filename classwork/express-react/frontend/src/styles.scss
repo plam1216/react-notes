@@ -1,0 +1,36 @@
+// --------------------------
+// VARIABLES
+// --------------------------
+// declare variable and assign value
+$maincolor: black;
+$contrastcolor: white;
+
+// @mixin lets you define styles that can be reused in the stylesheet
+@mixin white-text-black-bg {
+  color: $contrastcolor;
+  background-color: $maincolor;
+}
+
+@mixin black-text-white-bg {
+  color: $maincolor;
+  background-color: $contrastcolor;
+}
+
+// --------------------------
+// Header
+// --------------------------
+
+nav {
+  @include white-text-black-bg;
+  display: flex;
+  justify-content: flex-start;
+
+  a {
+    @include white-text-black-bg;
+
+    div {
+      margin: 10px;
+      font-size: large;
+    }
+  }
+}
